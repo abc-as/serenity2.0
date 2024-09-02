@@ -1,0 +1,140 @@
+.error {
+    color: #002e6c;
+}
+
+div.single-input-fields a {
+    color: black!important;
+}
+
+form#review-form {
+    padding: 10px 107px;
+}
+
+form#review-form p {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+form#review-form .rating i.y-rating {
+    font-size: 20px;
+    color: #002e6c;
+}
+
+form#review-form .rating i.no-rating {
+    font-size: 20px;
+    color: gray;
+}
+
+.review-item .rating i.y-rating {
+    font-size: 20px;
+    color: #002e6c;
+}
+
+.review-item .rating i.no-rating {
+    font-size: 20px;
+    color: gray;
+}
+
+form#review-form .rating, .comment {
+    padding: 15px;
+}
+
+form#review-form .comment {
+    width: 260px;
+}
+
+.book-rating .rating i.y-rating {
+    color: white!important;
+}
+
+.book-rating .rating i.no-rating {
+    color: #ffffff75 !important;
+}
+
+.all-book-rating .rating i.y-rating {
+    color: #002e6c!important;
+}
+
+.all-book-rating .rating i.no-rating {
+    color: gray!important;
+}
+
+a.saved-read-book {
+    color: black;
+    text-decoration: none;
+}
+
+a.saved-read-book:hover {
+    color: #0d0da3bd;;
+}
+
+.book-title:hover {
+    color: black;
+}
+
+.book-summary {
+    background: #002e6c;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 35px;
+    margin: 10px 10px;
+}
+
+.book-summary .book-title {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.book-summary .book-title:hover {
+    color: white;
+}
+
+.logo a {
+    color: #002e6c;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.welcome-main h6{
+    color: var(--primary-color-1);
+  }
+  .welcome-icon {
+    position: relative;
+    right: .25rem;
+    width: 35px;
+  }
+  
+  .welcome-main a {
+    font-size: 12px;
+    margin-top: 0px;
+    text-decoration: none;
+    color: #002e6c;
+  }
+  .welcome-main {
+  margin:10px;
+  margin-left: auto; 
+  }
+  .parent-container {
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+.properties-img img {
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    width: 100%;
+}
+.properties-caption.properties-caption2 {
+    height: 230px;
+}
+
+ul.errorlist {
+    color: red;
+    font-size: 13px;
+}
+
+div.alert-success {
+    color: green;
+}

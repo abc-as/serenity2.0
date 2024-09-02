@@ -1,0 +1,40 @@
+{% extends '../base.html' %}
+{% block body %}
+<section class="our-client section-padding best-selling">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-xl-5 col-lg-5 col-md-12">
+                <div class="section-title  mb-40">
+                <h2>Book Summary</h2>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-12">
+                <div class="nav-button mb-40">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-link {% if not selected_genre %}active{% endif %}" href="/book-summary">All</a>
+                            {% for gen in genres %}
+                                <a class="nav-link{% if gen.id|stringformat:"s" == selected_genre %} active{% endif %}" href="/book-summary/?genre={{gen.id}}">{{gen.name}}</a>
+                            {% endfor %}
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% if not books %}
+                <div style="text-align: center; font-size: 25px;">No summary</div>
+            {% else %}
+                {% for book in books %}
+                    <div class=" col-md-3  mr-1 book-summary">
+                        <div class="book-title">{{book.title}}</div>
+                        <div class="book-text">{{book.summary.text}}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    </section>
+{% endblock %}

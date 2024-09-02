@@ -1,0 +1,15 @@
+{% extends "books/base_generic.html" %}
+
+{% block content %}
+  <h1>Moderate Review</h1>
+
+  <p><strong>Rating:</strong> {{ review.rating }}</p>
+  <p><strong>Comment:</strong> {{ review.comment }}</p>
+  <p><strong>Submitted by:</strong> {{ review.user }}</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" name="delete" class="btn btn-danger">Delete Review</button>
+    <!-- Implement edit functionality if needed -->
+  </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "crafty-calling-431608-f5",
+  "private_key_id": "0e62b133091cb513d09ed4a154dfcf7f588983fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDIAeSOELhLRn6T\nS78e6So5aT/lvwFv/+uCQalvAmP7pRG1hEtzdBufpxkDXWYL1tvGMIrqP0B5qovs\nw97EaXFjdHygJqhyUPbjPBhW87bEn/S7VzOvWsHPfwAYp8ySUmKPJD+PmT1cc+KG\ninJX39FI9OBWjjef0UaI5a+KvNLDZ/gwOb7h6oK6k0LC6FVr01CNFxoRE76VLol4\nsKKOf0mpXGWFihe/uEKga+YkuFKbkXUQokzOq1BauTvel7wc8fLlqz9YmywRIML3\ntxWauiwsBuyLOIaw8ldKls61fuZ6KXrsHBbtKrsxJx+4uSfH5kIJWSC2chzsdqRh\nw/xELFgLAgMBAAECggEAHGWwZr9W+1EZ/Z3el+vxE8+uw9b3xEgozwi1ns5PFdad\nChGriMvudB+MfJ7RM1MhRyVzQ8kRRXUCgu5Yfbie4ckTPMXgWsLGGwNYTVgzFf3E\nCKlb7ETNicF1aQrCD/BkkABMif3u6WaGviWAEJv1og8qnv94RFe5VQyPfPpMTnP/\nVf5z9ivUD7ci5jrPSsgUGaPGPeZnazd+TcjKv5Yxw5qgZvP+5fUymcPd7aEl1t7l\nVcL3ahryRj39vauXIkHRd2WZ2lwQT/doDNRL10BdtxGnOBVM5pjKO98NtCcuNkLQ\noBLh44VFcLBFoqTuzJXyiF106M3k5eAzULHw/lXTmQKBgQDkX8WtIS0GvMUlq9jn\n5zT0W+MnuoTthVafJn81HKZZVUThS3/AJKB6msqZt4mkkPul6a4LpRBOqTCCiZnG\n9oJUf+vHRuhEieFFHB5u/Zoa6+ZVI9dDs+i7LbO39I7/PA232vlvsnZqKAdoH4sj\nK/2rHv5lwzRL+DVb74eXH4CAHwKBgQDgM6r1CmVURsoNbPYFEN1y16eOQhI0o3nI\nOdedB7wfvMO99WoPlJjva5rCVGRQxlzMaQ6wVj9ojla8JcWsW3sLOreX+/dyMDwp\nhtl6eCSwueK8f1Qji4DvNWuBaY/ZOhA8z5133rMUX2HY6vUjaIXfdMuo7C0f5IPw\nhT1d2E16lQKBgHa1Wbl+rzr7ULceNqeExT/nq5HxIDuevcIIbsMa21VAP4ekiQlF\ngK16XKm+f6utOUGq0C95Y5qf03lnMSn85Q4rWFHDh+Roj1IvJZqn9DzeNmI3OSQW\nFnmFbg/G7bW6b58MEfB/oZHYsNDs5JQpv7f9altXNo3uvT3GqoJhe5gdAoGBALSL\n5xf9jywW9Y9qN5RMyIg68ku1GUQagW+kZOWn3O8R6++FOivh1ma3mKD1pPMHSqOx\n1opaaiWgumg5Yr4xzRx15HMYDWR/Q3ONjIT7S1Cl4Nk7EF6vcN0xf6lvgM/F2l2e\nM4jcZgn55anxTAd/nI8eVwNpbc1JEJcYNRrlnT8hAoGAYF1sAtMZt9qejOAhjq3J\nrPd1X6EeQUqGzCZURM1Qf66FBahUdh2G56cvx92Yybrz/hHer+14iVUHYRp7bjYk\n7CPhqfErwyPXcbGdJ3VjgPQIi5pf0AWQgeQpP56u6n7qHlAv5xpfeBjqf8WpLLdP\nyZ7WjBdURLMSo+1Gc+BwAQM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "serenity@crafty-calling-431608-f5.iam.gserviceaccount.com",
+  "client_id": "107941901416405096214",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/serenity%40crafty-calling-431608-f5.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
