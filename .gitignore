@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+*.egg-info/
+*.pyc
+__pycache__/
+
+# Environment variables
+.env
+
+# Django settings
+*.log
+
+# Media and static files
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# Python build artifacts
+build/
+dist/
+*.egg

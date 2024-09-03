@@ -1,0 +1,31 @@
+{% extends '../base.html' %} {% block body %}
+<main class="login-bg">
+  <div class="login-form-area">
+    <form method="POST">
+      {% csrf_token %}
+    <div class="login-form">
+      <div class="login-heading">
+        <span>Account Activation</span>
+        <p>Enter OTP to activate your account.</p>
+      </div>
+
+      <div class="input-box">
+        <div class="single-input-fields">
+          <label>OTP</label>
+          <input type="text" hidden id="aa_email" name="email" >
+          <input type="text" name="otp" required>
+          {% if error == 'Invalid OTP!' %}
+            <div class="error">{{ error }}</div>
+          {% else %}
+            <div class="error">{{ error }}</div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="login-footer">
+        <button class="submit-btn3">Activate</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</main>
+{% endblock body %}

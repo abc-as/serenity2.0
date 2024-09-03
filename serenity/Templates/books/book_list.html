@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Book List</h1>
+
+    <!-- Search Form -->
+    <form method="get" class="search-form">
+        <div class="form-group">
+            <input type="text" name="q" value="{{ search_query }}" placeholder="Search for books..." class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <!-- Genre Filter -->
+    <form method="get" class="genre-form">
+        <div class="form-group">
+            <select name="genre" class="form-control" onchange="this.form.submit()">
+                <option value="">All Genres</option>
+                {% for genre in genres %}
+                    <option value="{{ genre.id }}" {% if selected_genre == genre.id|stringformat:"s" %}selected{% endif %}>{{ genre.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+
+    <h2>Results</h2>
+    {% if books %}
+        <ul class="book-list">
+            {% for book in books %}
+                <li class="book-item">
+                    <div class="book-image">
+                        {% if book.image %}
+                            <img src="{{ book.image.url }}" alt="{{ book.title }}">
+                        {% else %}
+                            <img src="{% static 'images/default_book_cover.jpg' %}" alt="Default Cover">
+                        {% endif %}
+                    </div>
+                    <div class="book-details">
+                        <h3><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></h3>
+                        <p><strong>Author:</strong> {{ book.author }}</p>
+                        <p><strong>Genre:</strong> {{ book.genre.name }}</p>
+                        <p><strong>Rating:</strong> {{ book.average_rating|default:"Not Rated" }} / 5</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books found.</p>
+    {% endif %}
+</body>
+</html>

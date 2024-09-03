@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Book Information{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Book Details{% endblock %}</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Default content if not overridden -->
+        <div class="book-info">
+            {% if book %}
+                <h2>{{ book.title }}</h2>
+                {% if book.image %}
+                    <img src="{{ book.image.url }}" alt="{{ book.title }}" class="book-image">
+                {% endif %}
+                <p><strong>Author:</strong> {{ book.author }}</p>
+                <p><strong>Genre:</strong> {{ book.genre.name }}</p>
+                <p><strong>Published Date:</strong> {{ book.published_date }}</p>
+                <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+                <p><strong>Summary:</strong> {{ book.summary }}</p>
+            {% else %}
+                <p>No book details available.</p>
+            {% endif %}
+        </div>
+        {% endblock %}
+    </main>
+

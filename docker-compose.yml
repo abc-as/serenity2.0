@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: elasticsearch:2.4
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    mem_limit: 2g
+    networks:
+      - main
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=serenity
+      - POSTGRES_PASSWORD=serenity@123
+      - POSTGRES_DB=books_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - main
+
+  web:
+    build: .
+    devices:
+      - /dev/snd
+    environment:
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native
+      - DATABASE_URL=postgres://your_username:your_password@postgres:5432/your_database
+    image: serenity_proj
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./serenity:/home/projects/serenity
+    ports:
+      - "8000:8000"
+    env_file: config.env
+    networks:
+      - main
+    depends_on:
+      - elasticsearch
+      - postgres
+
+networks:
+  main:
+    driver: bridge
+
+volumes:
+  postgres_data:

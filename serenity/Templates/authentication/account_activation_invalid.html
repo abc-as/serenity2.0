@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Activation Invalid</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Account Activation Invalid</h1>
+        <p>The activation link you used is either invalid or expired. Please request a new activation link or contact support for assistance.</p>
+        <a href="{% url 'resend_activation_email' %}">Resend Activation Email</a>
+    </div>
+</body>
+</html>

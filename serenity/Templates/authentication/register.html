@@ -1,0 +1,59 @@
+{% extends '../base.html' %} {% block body %}
+<main class="login-bg">
+  <div class="register-form-area">
+    <div class="register-form text-center">
+      <div class="register-heading">
+        <span>Sign Up</span>
+        <p>Create your account to get full access</p>
+      </div>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="input-box">
+          <div class="single-input-fields">
+            <label>{{ form.email.label }}</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+              <div class="error">{{ form.email.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="single-input-fields">
+            <label>{{ form.username.label }}</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+              <div class="error">{{ form.username.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="single-input-fields">
+            <label>{{ form.phone_number.label }}</label>
+            {{ form.phone_number }}
+            {% if form.phone_number.errors %}
+              <div class="error">{{ form.phone_number.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="single-input-fields">
+            <label>Password</label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+              <div class="error">{{ form.password1.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="single-input-fields">
+            <label>Confirm Password</label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+              <div class="error">{{ form.password2.errors }}</div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="register-footer">
+          <p> Already have an account? <a href="login.html"> Login</a> here</p>
+          <button class="submit-btn3">Sign Up</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</main>
+<script>
+  document.getElementsByClassName('login-bg')[0].style.marginBottom = '275px';
+</script>
+{% endblock body %}

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/price_rangs.css' %}">
+    <link rel="stylesheet" href="{% static '/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static '/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static '/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <title>Serenity</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<style>
+    .slider-active {
+        width: 100%;
+    }
+    .single-slider {
+        height: 300px; /* Adjust height as needed */
+        background: #ddd; /* Example background */
+    }
+</style>
+</head>
+
+<header>
+    <div class="header-area">
+    <div class="main-header ">
+    <div class="header-top ">
+    <div class="container">
+    <div class="row">
+    <div class="col-xl-12">
+    <div class="d-flex justify-content-between align-items-center flex-sm">
+    <div class="header-info-left d-flex align-items-center">
+    
+    <div class="logo">
+    <a href="/">Serenity Shelf</a>
+    </div>
+    <form action="/search" class="form-box">
+        <input type="text" name="q" value="{{ search_query }}" placeholder="Search book">
+        <div class="search-icon">
+            <i class="ti-search"></i>
+        </div>
+    </form>
+    </div>
+
+
+    <div class="col-5 justify-content-end ">
+        <div class="parent-container d-flex flex-column">
+            <div class="welcome-main d-flex">
+               <div class="first">
+                  <svg class="welcome-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.48 46">
+                     <defs>
+                        <style>.welcome-1,.welcome-2{fill:none;stroke:#ee7523;stroke-linecap:round;stroke-width:3px;}.welcome-1{stroke-miterlimit:10;}.welcome-2{stroke-linejoin:round;}</style>
+                     </defs>
+                     <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                           <g id="Group_268" data-name="Group 268">
+                              <path id="Path_54" data-name="Path 54" class="welcome-1" d="M20.61,22.5c-17.27,1.72-19,16-19,16-.51,3.79.78,6,3,6h21"></path>
+                              <ellipse id="Ellipse_8" data-name="Ellipse 8" class="welcome-1" cx="20.61" cy="12" rx="10" ry="10.5"></ellipse>
+                              <g id="Group_76" data-name="Group 76">
+                                 <line id="Line_17" data-name="Line 17" class="welcome-2" x1="41.98" y1="33.5" x2="25.61" y2="33.5"></line>
+                              </g>
+                              <path id="Path_55" data-name="Path 55" class="welcome-2" d="M34,24.5l8,9-8,8"></path>
+                           </g>
+                        </g>
+                     </g>
+                  </svg>
+               </div>
+               <div class="second" style="padding-top: 10px;">
+                <h6>Welcome {% if request.user.is_authenticated %}{{request.user.username}}{% else %}Guest{% endif %}</h6>
+     
+               </div>
+            </div>
+         </div>
+    </div>
+
+    <div class="header-info-right d-flex align-items-center">
+    <ul>
+    <li>
+        {% if request.user.is_authenticated %}
+            <a href="/profile" class=" btn header-btn">Profile</a>
+        {% else %}
+            <a href="/login" class="btn header-btn">Sign in</a>
+        {% endif %}
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="header-bottom  header-sticky">
+    <div class="container">
+    <div class="row align-items-center">
+    <div class="col-xl-12">
+    
+    <div class="logo2">
+    <a href="/">Serenity Shelf</a>
+    </div>
+    
+    <div class="main-menu text-center d-none d-lg-block">
+    <nav>
+    <ul id="navigation">
+    <li><a href="/">Home</a></li>
+
+    <li><a href="/recomendations">Recommendations</a></li>
+    <li><a href="/feedback">Feedback</a></li>
+    <li><a href="/book-summary">Summary</a></li>
+    <li><a href="/book-read">Book Read</a></li>
+    <li><a href="/audiobooks">Audio Book</a></li>
+    <li><a href="/download-books">Book Download</a></li>
+   <li><a href="/contact">Contact</a></li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    
+    <div class="col-xl-12">
+    <div class="mobile_menu d-block d-lg-none"><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+    <li><a href="/" role="menuitem" tabindex="-1">Home</a></li>
+    <li><a href="category" role="menuitem" tabindex="-1">Recommendations</a></li>
+    <li><a href="category" role="menuitem" tabindex="-1">Feedback</a></li>
+    <li><a href="category" role="menuitem" tabindex="-1">Summary</a></li>
+    <li><a href="category" role="menuitem" tabindex="-1">Book Read</a></li>
+    <li><a href="about.html" role="menuitem" tabindex="-1">About</a></li>
+    <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row"><a href="#" tabindex="-1">Pages</a>
+    <span class="slicknav_arrow">+</span></a><ul class="submenu slicknav_hidden" role="menu" aria-hidden="true" style="display: none;">
+    <li><a href="/login" role="menuitem" tabindex="-1">login</a></li>
+    </ul>
+    </li>
+    <li><a href="/contact" role="menuitem" tabindex="-1">Contact</a></li>
+    </ul></div></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </header>
+    <main>
+ 
+    <section id="banner" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 back-one d-flex align-items-center justify-content-center">
+            <div class="main-wrap">
+            <h1 class="">Audiobooks<br>
+                &amp; More</h1>
+                <h6 class="h-divider "></h6>
+                <p>START A FREE TRIAL TO GET 3 AUDIOBOOKS
+                    FREE PLUS 30 DAYS OF ACCESS TO MEMBER-EXCLUSIVE PERKS AND DEALS</p>
+                    <a href="register.html" tabindex="0" class="btn btn__submit jumbotron-btn" title="Get 3 Audiobooks for free">
+                        Get 3 Audiobooks &amp; More for FREE                </a>
+            </div>
+                </div>
+                <div class="col-md-6">
+            <div class="main-second">
+            <img src="../media/book_images/audio.jpg">
+            </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    {% if read_books %}
+    <section class="now-trending" class="py-5">
+        <div class="container">
+            <h2 class="text-center  section-title">Read Books</h2>
+            <div id="readBooksSlider" class="slick-slider">
+                {% for book in read_books %}
+                    <div class="book-card" style="margin-right: 20px;"> <!-- Adjust margin as needed -->
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="/book/{{book.book.id}}"><img src="{{book.book.image.url}}" class="card-img-top" alt="{{book.book.title}}"></a>
+                                <div class="discount-badge position-absolute top-0 end-0 bg-danger text-white p-2">20% OFF
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <a class="saved-read-book" href="/book/{{book.book.id}}/"><h5 class="card-title">{{book.book.title}}</h5></a>
+                                <div class="review all-book-rating">
+                                    <div class="rating">
+                                        {% for i in "12345" %}
+                                            {% if i|add:0 <= book.book.average_rating %}
+                                                <i class="fas fa-star y-rating"></i>
+                                            {% else %}
+                                                <i class="fas fa-star no-rating"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <!-- <p class="card-text">$15.99</p> -->
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- Add more book cards as needed -->
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    {% if saved_books %}
+    <section class="now-trending" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Saved Books</h2>
+            <div id="savedBooksSlider" class="slick-slider">
+                {% for book in saved_books %}
+                    <div class="book-card" style="margin-right: 20px;"> <!-- Adjust margin as needed -->
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="/book/{{book.book.id}}"><img src="{{book.book.image.url}}" class="card-img-top" alt="{{book.book.title}}"></a>
+                                <div class="discount-badge position-absolute top-0 end-0 bg-danger text-white p-2">20% OFF
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <a class="saved-read-book" href="/book/{{book.book.id}}/"><h5 class="card-title">{{book.book.title}}</h5></a>
+                                <div class="review all-book-rating">
+                                    <div class="rating">
+                                        {% for i in "12345" %}
+                                            {% if i|add:0 <= book.book.average_rating %}
+                                                <i class="fas fa-star y-rating"></i>
+                                            {% else %}
+                                                <i class="fas fa-star no-rating"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <!-- <p class="card-text">$15.99</p> -->
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- Add more book cards as needed -->
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    {% if books %}
+    <section class="our-client section-padding best-selling">
+        <div class="container">
+        <div class="row justify-content-between">
+        <div class="col-xl-5 col-lg-5 col-md-12">
+        
+        <div>
+        <h2 class="section-title  mb-40">Latest Published items</h2>
+        </div>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-12">
+        <div class="nav-button mb-40">
+        
+        <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-link {% if not selected_genre %}active{% endif %}" href="/">All</a>
+        
+        {% for gen in genres %}
+            <a class="nav-link{% if gen.id|stringformat:"s" == selected_genre %} active{% endif %}" href="/?genre={{gen.id}}">{{gen.name}}</a>
+        {% endfor %}
+        </div>
+        </nav>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="container">
+         <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
+            <div class="row">
+                {% for book in books %}
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="properties pb-30">
+                        <div class="properties-card">
+                            <div class="properties-img">
+                            <a href="/book/{{book.id}}"><img src="{{book.image.url}}" alt="{{book.book.title}}"></a>
+                            </div>
+                            <div class="properties-caption properties-caption2">
+                                <h3><a href="/book/{{book.id}}">{{book.title}}</a></h3>
+                                <p>{{book.author.name}}</p>
+                                <div class="properties-footer d-flex justify-content-between align-items-center">
+                                    <div class="review all-book-rating">
+                                        <div class="rating">
+                                            {% for i in "12345" %}
+                                                {% if i|add:0 <= book.average_rating %}
+                                                    <i class="fas fa-star y-rating"></i>
+                                                {% else %}
+                                                    <i class="fas fa-star no-rating"></i>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    <p>(<span>{{book.reviews.count}}</span> Review)</p>
+                                    </div>
+                                    <!-- <div class="price">
+                                        <span>$50</span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+        {% if books.count > 20 %}
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="more-btn text-center mt-15">
+                        <a href="#" class="border-btn border-btn2 more-btn2">Browse More</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        </div>
+    </section>
+    {% endif %}
+    
+    </main>
+    <footer>
+    <div class="footer-wrappper section-bg">
+    <div class="footer-area footer-padding">
+    <div class="container">
+    <div class="row justify-content-between">
+    <div class="col-xl-3 col-lg-5 col-md-4 col-sm-6">
+    <div class="single-footer-caption ">
+    <div class="single-footer-caption ">
+    
+    <div class="footer-logo mb-25">
+    <a href="/"><h3 class="section-title">
+        Serenity Shelf
+    </h3>
+      </a>
+    </div>
+    <div class="footer-tittle">
+    <div class="footer-pera">
+    <p>Get the breathing space now, and we’ll extend your term at the other end year for go.</p>
+    </div>
+    </div>
+    
+    <div class="footer-social">
+    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+    <div class="single-footer-caption ">
+    <div class="footer-tittle">
+    <h4>Book Category</h4>
+    <ul>
+    <li><a href="#">History</a></li>
+    <li><a href="#">Horror - Thriller</a></li>
+    <li><a href="#">Love Stories</a></li>
+    <li><a href="#">Science Fiction</a></li>
+    <li><a href="#">Business</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+    <div class="single-footer-caption ">
+    <div class="footer-tittle">
+    <h4>&nbsp;</h4>
+    <ul>
+    <li><a href="#">Biography</a></li>
+    <li><a href="#">Astrology</a></li>
+    <li><a href="#">Digital Marketing</a></li>
+    <li><a href="#">Software Development</a></li>
+    <li><a href="#">Ecommerce</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+    <div class="single-footer-caption">
+    <div class="footer-tittle">
+    <h4>Site Map</h4>
+    <ul class="mb-20">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="footer-bottom-area">
+    <div class="container">
+    <div class="footer-border">
+    <div class="row d-flex align-items-center">
+    <div class="col-xl-12 ">
+    <div class="footer-copy-right text-center">
+    Copyright © 2024  | All rights reserved 
+    </div> 
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#readBooksSlider').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: true,
+                responsive: [
+                    {
+                        breakpoint: 1024, // For screens wider than 1024px
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768, // For screens wider than 768px
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480, // For screens wider than 480px
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+            $('#savedBooksSlider').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: true,
+                responsive: [
+                    {
+                        breakpoint: 1024, // For screens wider than 1024px
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768, // For screens wider than 768px
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480, // For screens wider than 480px
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <!--  -->
+
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider-active').slick({
+            dots: true, // Show dots
+            infinite: true, // Infinite loop
+            speed: 500, // Animation speed
+            slidesToShow: 1, // Number of slides to show
+            slidesToScroll: 1, // Number of slides to scroll
+            arrows: true, // Show navigation arrows
+        });
+    });
+</script>
+
+    
+<!--  -->
+</body>
+    </html>

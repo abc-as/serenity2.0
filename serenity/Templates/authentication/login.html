@@ -1,0 +1,41 @@
+{% extends '../base.html' %} {% block body %}
+<main class="login-bg">
+  <div class="login-form-area">
+    <form method="POST">
+      {% csrf_token %}
+    <div class="login-form">
+      <div class="login-heading">
+        <span>Login</span>
+        <p>Enter Login details to get access</p>
+      </div>
+
+      <div class="input-box">
+        <div class="single-input-fields">
+          <label>{{ form.username.label }}</label>
+          {{ form.username }}
+        </div>
+        <div class="single-input-fields">
+          <label>{{ form.password.label }}</label>
+          {{ form.password }}
+        </div>
+        {% if form.non_field_errors %}
+          <div class="error">
+              {{ form.non_field_errors }}
+          </div>
+        {% endif %}
+        <div class="single-input-fields login-check">
+          <input type="checkbox" name="remember_me" id="remember_me" />
+          <label for="remember_me">Keep me logged in</label>
+          <a href="/password_reset" class="f-right">Forgot Password?</a>
+        </div>
+      </div>
+
+      <div class="login-footer">
+        <p>Don’t have an account? <a href="/register">Sign Up</a> here</p>
+        <button class="submit-btn3">Login</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</main>
+{% endblock body %}
